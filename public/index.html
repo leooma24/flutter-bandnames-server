@@ -20,11 +20,9 @@
         socket.on('disconnect', function() {
             console.log('perdimos coneccion');
         })
-
-        socket.emit('mensaje', { nombre: 'Fernando' })
-
-        socket.on('mensaje', function(payload) {
-            console.log(payload);
+        socket.on('active-bands', function(payload) {
+            console.clear();
+            console.table(payload);
         })
     </script>
 </body>
